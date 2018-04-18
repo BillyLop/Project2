@@ -69,7 +69,7 @@ namespace Project2_crossroad
 
             tablero.personaje = new Personaje("Kirito", 5, 9);
             
-
+            //creacion de carros
             tablero.carros = new List<Carro>();
             Carro carro = new Carro("Azul", 9, 2);
             carro.direccion = "Izquierda";

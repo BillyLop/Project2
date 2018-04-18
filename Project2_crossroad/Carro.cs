@@ -12,6 +12,7 @@ namespace Project2_crossroad
     {
         public string nombre { get; set; }
         public string direccion { get; set; }
+        public int punteoARestar { get; set; }
 
         public Carro (string nombre, int posX, int posY)
         {
@@ -19,6 +20,8 @@ namespace Project2_crossroad
             this.tipo = "Carro";
             this.posX = posX;
             this.posY = posY;
+            this.punteoARestar = 0;
+
             if (nombre == "Azul")
             {
                 figura = new PictureBox();
