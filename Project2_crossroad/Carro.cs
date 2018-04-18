@@ -20,7 +20,7 @@ namespace Project2_crossroad
             this.tipo = "Carro";
             this.posX = posX;
             this.posY = posY;
-            this.punteoARestar = 0;
+            this.punteoARestar = 10;
 
             if (nombre == "Azul")
             {
@@ -29,6 +29,7 @@ namespace Project2_crossroad
                 figura.Size = new Size(60, 50);
                 figura.SizeMode = PictureBoxSizeMode.StretchImage;
                 figura.BackColor = Color.Transparent;
+
             }
             if (nombre == "Azulregreso")
             {

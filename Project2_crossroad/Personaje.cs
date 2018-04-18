@@ -11,6 +11,7 @@ namespace Project2_crossroad
     class Personaje : Pieza
     {
         string nombre;
+        public int punteo { get; set; }
 
         public Personaje (string nombre, int posX, int posY)
         {
@@ -18,6 +19,7 @@ namespace Project2_crossroad
             this.tipo = "Personaje";
             this.posX = posX;
             this.posY = posY;
+            this.punteo = 0;
             if (nombre == "Kirito")
             {
                 figura = new PictureBox();

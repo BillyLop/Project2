@@ -14,7 +14,7 @@ namespace Project2_crossroad
     public partial class CrossRoad : Form
     {
         Tablero tablero;
-        
+
         public void CreaTablero()
         {
 
@@ -68,7 +68,8 @@ namespace Project2_crossroad
             }
 
             tablero.personaje = new Personaje("Kirito", 5, 9);
-            
+            punteo.Text = "" + tablero.personaje.punteo;
+
             //creacion de carros
             tablero.carros = new List<Carro>();
             Carro carro = new Carro("Azul", 9, 2);
@@ -121,7 +122,7 @@ namespace Project2_crossroad
                 pieza.figura.Location = new Point(posX, posY);
                 this.Controls.Add(pieza.figura);
             }
-            
+
             //dibujar personaje
             posX = 10 + (tablero.personaje.posX * 60);
             posY = 40 + (tablero.personaje.posY * 50);
@@ -154,15 +155,23 @@ namespace Project2_crossroad
             carro.figura.Location = new Point(posX, posY);
             carro.figura.BackColor = Color.Transparent;
             carro.figura.BringToFront();
-        } 
+        }
         private void btnUp_Click(object sender, EventArgs e)
+        {
+            SubirPersonaje();
+        }
+        private void SubirPersonaje()
         {
             tablero.personaje.moverAdelante();
             dibujarPersonaje(tablero.personaje.posX, tablero.personaje.posY);
             personajeAtropellado();
+            personajeCruzoCalleArriba();
         }
-
         private void btnLeft_Click(object sender, EventArgs e)
+        {
+            MoverPersonajeIzquierda();
+        }
+        private void MoverPersonajeIzquierda()
         {
             tablero.personaje.moverIzquierda();
             dibujarPersonaje(tablero.personaje.posX, tablero.personaje.posY);
@@ -171,6 +180,10 @@ namespace Project2_crossroad
 
         private void btnRight_Click(object sender, EventArgs e)
         {
+            MoverPersonajeDerecha();
+        }
+        private void MoverPersonajeDerecha()
+        {
             tablero.personaje.moverDerecha();
             dibujarPersonaje(tablero.personaje.posX, tablero.personaje.posY);
             personajeAtropellado();
@@ -178,9 +191,14 @@ namespace Project2_crossroad
 
         private void btnDown_Click(object sender, EventArgs e)
         {
+            BajarPersonaje();
+        }
+        private void BajarPersonaje()
+        {
             tablero.personaje.moverAtras();
             dibujarPersonaje(tablero.personaje.posX, tablero.personaje.posY);
             personajeAtropellado();
+            personajeCruzoCalleAbajo();
         }
         private void dibujarPersonaje(int x, int y)
         {
@@ -194,7 +212,7 @@ namespace Project2_crossroad
 
         void avanzarCarroAsync(Carro carro)
         {
-              for (int x = 0; x < 2; x++)
+            for (int x = 0; x < 2; x++)
             {
                 carro.avanzar();
                 dibujarCarro(carro);
@@ -214,10 +232,70 @@ namespace Project2_crossroad
         {
             if (tablero.carros.Any(carro => carro.posX == tablero.personaje.posX && carro.posY == tablero.personaje.posY))
             {
-                MessageBox.Show("Game Over, Fuiste atropellado");
+                mensaje.Text = "Game Over, Fuiste atropellado";
+                tablero.personaje.punteo = tablero.personaje.punteo - 10;
+                punteo.Text = "" + tablero.personaje.punteo;
+                timerCarro1.Enabled = false;
                 return true;
             }
             return false;
         }
+
+        private bool personajeCruzoCalleArriba()
+        {
+            if (tablero.piezas.Any(pieza => pieza.tipo == "Pasto" && pieza.posY == tablero.personaje.posY && (pieza.posY == 1 || pieza.posY == 5)))
+            {
+                mensaje.Text = "Exitos, Entraste en área segura";
+                tablero.personaje.punteo = tablero.personaje.punteo + 2;
+                punteo.Text = "" + tablero.personaje.punteo;
+                return true;
+            }
+            return false;
+        }
+        private bool personajeCruzoCalleAbajo()
+        {
+            if (tablero.piezas.Any(pieza => pieza.tipo == "Pasto" && pieza.posY == tablero.personaje.posY && (pieza.posY == 4 || pieza.posY == 8)))
+            {
+                mensaje.Text = "Exitos, Entraste en área segura";
+                tablero.personaje.punteo = tablero.personaje.punteo + 2;
+                punteo.Text = "" + tablero.personaje.punteo;
+                return true;
+            }
+            return false;
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComenzar_Click(object sender, EventArgs e)
+        {
+            tablero.personaje.posX = 5;
+            tablero.personaje.posY = 9;
+            dibujarPersonaje(tablero.personaje.posX, tablero.personaje.posY);
+            timerCarro1.Enabled = true;
+        }
+
+        private void CrossRoad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                SubirPersonaje();
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                BajarPersonaje();
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                MoverPersonajeIzquierda();
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                MoverPersonajeDerecha();
+            }
+        }
+
+        
     }
 }
