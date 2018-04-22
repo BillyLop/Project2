@@ -12,6 +12,7 @@ namespace Project2_crossroad
     {
         string nombre;
         public int punteo { get; set; }
+        public Acompanante acompanante { get; set; }
 
         public Personaje (string nombre, int posX, int posY)
         {
@@ -20,10 +21,12 @@ namespace Project2_crossroad
             this.posX = posX;
             this.posY = posY;
             this.punteo = 0;
+            this.acompanante = null;
+
             if (nombre == "Kirito")
             {
                 figura = new PictureBox();
-                figura.Image = Image.FromFile("../../imagenes/personaje1.png");
+                figura.Image = Image.FromFile("../../imagenes/personaje7.png");
                 figura.Size = new Size(60, 50);
                 figura.SizeMode = PictureBoxSizeMode.StretchImage;
                 figura.BackColor = Color.Transparent;

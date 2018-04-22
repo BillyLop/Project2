@@ -13,11 +13,15 @@ namespace Project2_crossroad
         public List<Pieza> piezas { get; set; }
         public List<Carro> carros { get; set; }
         public Personaje personaje { get; set; }
+        public List<Acompanante> acompanantes { get; set; }
+        public String modo { get; set; }
+        public int tiempo { get; set; }
 
-        public Tablero(int tamanoX, int tamanoY)
+        public Tablero(int tamanoX, int tamanoY, int tiempo)
         {
             this.tamanoX = tamanoX;
             this.tamanoY = tamanoY;
+            this.tiempo = tiempo;
         }
 
 

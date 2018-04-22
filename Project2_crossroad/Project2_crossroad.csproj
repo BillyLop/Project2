@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acompanante.cs" />
     <Compile Include="Carro.cs" />
     <Compile Include="Personaje.cs" />
     <Compile Include="Pieza.cs" />
