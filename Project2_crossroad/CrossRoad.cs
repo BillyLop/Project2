@@ -657,12 +657,12 @@ namespace Project2_crossroad
             if (tablero.modo == "AyudaAncianos")
             {
                 CrearAcompanantesNivel2("Anciano");
-                tablero.tiempo = 35;
+                tablero.tiempo = 50;
             }
             else if (tablero.modo == "AyudaMascotas")
             {
                 CrearAcompanantesNivel2("Mascota");
-                tablero.tiempo = 35;
+                tablero.tiempo = 60;
             }
             else {
                 tablero.tiempo = 30;
@@ -680,12 +680,12 @@ namespace Project2_crossroad
             if (tablero.modo == "AyudaAncianos")
             {
                 CrearAcompanantesNivel3("Anciano");
-                tablero.tiempo = 35;
+                tablero.tiempo = 60;
             }
             else if (tablero.modo == "AyudaMascotas")
             {
                 CrearAcompanantesNivel3("Mascota");
-                tablero.tiempo = 35;
+                tablero.tiempo = 50;
             }
             else
             {
@@ -701,9 +701,9 @@ namespace Project2_crossroad
             LimpiarCarros();
             LimpiarAcompanantes();
             timerCarro1.Enabled = false;
-            pnlMnu1.Dock = DockStyle.Fill;
-            pnlMnu1.Visible = true;
-            pnlMnu1.BringToFront();
+            pnlNivel1.Dock = DockStyle.Fill;
+            pnlNivel1.Visible = true;
+            pnlNivel1.BringToFront();
         }
 
         private void LimpiarCarros()
@@ -801,6 +801,22 @@ namespace Project2_crossroad
                 }
                 punteo.Text = "" + tablero.personaje.punteo;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnlNivel1.Visible = false;
+            pnlModo.Dock = DockStyle.Fill;
+            pnlModo.Visible = true;
+            pnlModo.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pnlModo.Visible = false;
+            pnlMnu1.Dock = DockStyle.Fill;
+            pnlMnu1.Visible = true;
+            pnlMnu1.BringToFront();
         }
 
 

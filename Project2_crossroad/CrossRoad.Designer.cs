@@ -74,6 +74,8 @@
             this.lblTiempo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timerTiempo = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlModo.SuspendLayout();
             this.pnlNivel1.SuspendLayout();
             this.pnlInstrucciones.SuspendLayout();
@@ -225,6 +227,7 @@
             this.pnlModo.BackColor = System.Drawing.Color.Black;
             this.pnlModo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlModo.BackgroundImage")));
             this.pnlModo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlModo.Controls.Add(this.button2);
             this.pnlModo.Controls.Add(this.lbModo);
             this.pnlModo.Controls.Add(this.btnModo3);
             this.pnlModo.Controls.Add(this.btnModo2);
@@ -289,6 +292,7 @@
             // 
             this.pnlNivel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlNivel1.BackgroundImage")));
             this.pnlNivel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlNivel1.Controls.Add(this.button1);
             this.pnlNivel1.Controls.Add(this.btnNiv31);
             this.pnlNivel1.Controls.Add(this.btnNiv21);
             this.pnlNivel1.Controls.Add(this.btnNiv11);
@@ -512,7 +516,7 @@
             this.btnRegresarMenu.Name = "btnRegresarMenu";
             this.btnRegresarMenu.Size = new System.Drawing.Size(133, 23);
             this.btnRegresarMenu.TabIndex = 12;
-            this.btnRegresarMenu.Text = "Regresar al menu";
+            this.btnRegresarMenu.Text = "Siguiente nivel";
             this.btnRegresarMenu.UseVisualStyleBackColor = false;
             this.btnRegresarMenu.Click += new System.EventHandler(this.btnRegresarMenu_Click);
             // 
@@ -590,6 +594,30 @@
             this.timerTiempo.Interval = 1000;
             this.timerTiempo.Tick += new System.EventHandler(this.timerTiempo_Tick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.Lime;
+            this.button1.Location = new System.Drawing.Point(17, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(201, 44);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Elegir modo de juego";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.ForeColor = System.Drawing.Color.LightGray;
+            this.button2.Location = new System.Drawing.Point(14, 257);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(201, 44);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Volver a menú principal";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // CrossRoad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +646,7 @@
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.btnUp);
+            this.DoubleBuffered = true;
             this.KeyPreview = true;
             this.Name = "CrossRoad";
             this.Text = "CrossRoad";
@@ -679,6 +708,8 @@
         private System.Windows.Forms.Label lblTiempo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timerTiempo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
 
 
 
