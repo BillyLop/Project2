@@ -43,11 +43,13 @@
             this.btnNpartida = new System.Windows.Forms.Button();
             this.btnInstruciones = new System.Windows.Forms.Button();
             this.pnlModo = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.lbModo = new System.Windows.Forms.Label();
             this.btnModo3 = new System.Windows.Forms.Button();
             this.btnModo2 = new System.Windows.Forms.Button();
             this.btnModo1 = new System.Windows.Forms.Button();
             this.pnlNivel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnNiv31 = new System.Windows.Forms.Button();
             this.btnNiv21 = new System.Windows.Forms.Button();
             this.btnNiv11 = new System.Windows.Forms.Button();
@@ -74,8 +76,6 @@
             this.lblTiempo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timerTiempo = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlModo.SuspendLayout();
             this.pnlNivel1.SuspendLayout();
             this.pnlInstrucciones.SuspendLayout();
@@ -238,6 +238,18 @@
             this.pnlModo.TabIndex = 10;
             this.pnlModo.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.ForeColor = System.Drawing.Color.LightGray;
+            this.button2.Location = new System.Drawing.Point(14, 257);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(201, 44);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Volver a menú principal";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // lbModo
             // 
             this.lbModo.AutoSize = true;
@@ -301,6 +313,18 @@
             this.pnlNivel1.Size = new System.Drawing.Size(265, 223);
             this.pnlNivel1.TabIndex = 4;
             this.pnlNivel1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.Lime;
+            this.button1.Location = new System.Drawing.Point(17, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(201, 44);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Elegir modo de juego";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnNiv31
             // 
@@ -529,7 +553,7 @@
             this.btnTomarAcompanante.Name = "btnTomarAcompanante";
             this.btnTomarAcompanante.Size = new System.Drawing.Size(134, 23);
             this.btnTomarAcompanante.TabIndex = 13;
-            this.btnTomarAcompanante.Text = "Tomar Acompanante";
+            this.btnTomarAcompanante.Text = "Tomar Acompanante(A)";
             this.btnTomarAcompanante.UseVisualStyleBackColor = false;
             this.btnTomarAcompanante.Click += new System.EventHandler(this.btnTomarAcompanante_Click);
             // 
@@ -542,7 +566,7 @@
             this.btnSoltarAcompanante.Name = "btnSoltarAcompanante";
             this.btnSoltarAcompanante.Size = new System.Drawing.Size(134, 23);
             this.btnSoltarAcompanante.TabIndex = 14;
-            this.btnSoltarAcompanante.Text = "Soltar Acompanante";
+            this.btnSoltarAcompanante.Text = "Soltar Acompanante(S)";
             this.btnSoltarAcompanante.UseVisualStyleBackColor = false;
             this.btnSoltarAcompanante.Click += new System.EventHandler(this.btnSoltarAcompanante_Click);
             // 
@@ -576,6 +600,7 @@
             this.lblTiempo.Size = new System.Drawing.Size(19, 20);
             this.lblTiempo.TabIndex = 17;
             this.lblTiempo.Text = "0";
+            this.lblTiempo.Click += new System.EventHandler(this.lblTiempo_Click);
             // 
             // label4
             // 
@@ -593,30 +618,6 @@
             // 
             this.timerTiempo.Interval = 1000;
             this.timerTiempo.Tick += new System.EventHandler(this.timerTiempo_Tick);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(17, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 44);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Elegir modo de juego";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Location = new System.Drawing.Point(14, 257);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 44);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Volver a menú principal";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // CrossRoad
             // 

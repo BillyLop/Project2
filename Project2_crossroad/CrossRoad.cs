@@ -155,7 +155,7 @@ namespace Project2_crossroad
             carro.direccion = "Derecha";
             tablero.carros.Add(carro);
 
-            carro = new Carro("Verde", 5, 6);
+            carro = new Carro("Negro", 5, 6);
             carro.direccion = "Izquierda";
             tablero.carros.Add(carro);
 
@@ -192,14 +192,6 @@ namespace Project2_crossroad
             tablero.carros.Add(carro);
 
             carro = new Carro("Rojoregreso", 0, 7);
-            carro.direccion = "Derecha";
-            tablero.carros.Add(carro);
-
-            carro = new Carro("Verde", 5, 6);
-            carro.direccion = "Izquierda";
-            tablero.carros.Add(carro);
-
-            carro = new Carro("Verderegreso", 3, 7);
             carro.direccion = "Derecha";
             tablero.carros.Add(carro);
 
@@ -507,8 +499,6 @@ namespace Project2_crossroad
             }
         }
 
-
-
         void avanzarCarroAsync(Carro carro)
         {
             for (int x = 0; x < 2; x++)
@@ -527,7 +517,6 @@ namespace Project2_crossroad
             }
         }
 
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -544,7 +533,6 @@ namespace Project2_crossroad
             tablero.tiempo = 30;
             timerTiempo.Enabled = true;
             timerCarro1.Enabled = true;
-
         }
 
         private void CrossRoad_KeyUp(object sender, KeyEventArgs e)
@@ -565,7 +553,7 @@ namespace Project2_crossroad
             {
                 MoverPersonajeDerecha();
             }
-            if (e.KeyCode == Keys.T) {
+            if (e.KeyCode == Keys.A) {
                 TomarAcompanante();
             }
             if (e.KeyCode == Keys.S) {
@@ -590,8 +578,6 @@ namespace Project2_crossroad
             pnlNivel1.Visible = true;
             pnlNivel1.BringToFront();
         }
-
-        
 
         private void btnInstruciones_Click(object sender, EventArgs e)
         {
@@ -634,15 +620,15 @@ namespace Project2_crossroad
             if (tablero.modo == "AyudaAncianos")
             {
                 CrearAcompanantesNivel1("Anciano");
-                tablero.tiempo = 30;
+                tablero.tiempo = 50;
             }
             else if (tablero.modo == "AyudaMascotas")
             {
                 CrearAcompanantesNivel1("Mascota");
-                tablero.tiempo = 30;
+                tablero.tiempo = 50;
             }
             else {
-                tablero.tiempo = 20;
+                tablero.tiempo = 40;
             }
             timerCarro1.Interval = 1000;
             timerCarro1.Enabled = true;
@@ -657,12 +643,12 @@ namespace Project2_crossroad
             if (tablero.modo == "AyudaAncianos")
             {
                 CrearAcompanantesNivel2("Anciano");
-                tablero.tiempo = 50;
+                tablero.tiempo = 70;
             }
             else if (tablero.modo == "AyudaMascotas")
             {
                 CrearAcompanantesNivel2("Mascota");
-                tablero.tiempo = 60;
+                tablero.tiempo = 70;
             }
             else {
                 tablero.tiempo = 30;
@@ -680,16 +666,16 @@ namespace Project2_crossroad
             if (tablero.modo == "AyudaAncianos")
             {
                 CrearAcompanantesNivel3("Anciano");
-                tablero.tiempo = 60;
+                tablero.tiempo = 90;
             }
             else if (tablero.modo == "AyudaMascotas")
             {
                 CrearAcompanantesNivel3("Mascota");
-                tablero.tiempo = 50;
+                tablero.tiempo = 90;
             }
             else
             {
-                tablero.tiempo = 30;
+                tablero.tiempo = 40;
             }
             timerCarro1.Interval = 1000;
             timerCarro1.Enabled = true;
@@ -817,6 +803,11 @@ namespace Project2_crossroad
             pnlMnu1.Dock = DockStyle.Fill;
             pnlMnu1.Visible = true;
             pnlMnu1.BringToFront();
+        }
+
+        private void lblTiempo_Click(object sender, EventArgs e)
+        {
+
         }
 
 
